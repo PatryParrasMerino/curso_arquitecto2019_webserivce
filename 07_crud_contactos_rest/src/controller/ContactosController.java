@@ -21,7 +21,7 @@ public class ContactosController {
 
 	@Autowired
 	DaoContactos daoContactos;
-	
+	//
 	@GetMapping(value = "/contactos", produces=MediaType.APPLICATION_JSON_VALUE)
 	public List<Contacto> contactos(){
 		return daoContactos.recuperarContactos();
@@ -36,7 +36,7 @@ public class ContactosController {
 	public void eliminar(@PathVariable("id") int idContacto) {
 		daoContactos.eliminarContacto(idContacto);
 	}
-	
+	//
 	@PostMapping(value = "/contactos",consumes=MediaType.APPLICATION_JSON_VALUE)
 	public void alta(@RequestBody Contacto contacto) {
 		daoContactos.altaContacto(contacto);
