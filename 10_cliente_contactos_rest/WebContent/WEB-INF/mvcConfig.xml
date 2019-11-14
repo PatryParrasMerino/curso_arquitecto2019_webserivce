@@ -6,15 +6,10 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
-
-	<mvc:annotation-driven />
-	<context:component-scan
-		base-package="controller" />
-
-	<bean id="resolver"
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/"></property>
-		<property name="suffix" value=".jsp"></property>
+	<mvc:annotation-driven/>
+	<context:component-scan base-package="controller"/>
+	
+	<bean id="template"
+		class="org.springframework.web.client.RestTemplate">
 	</bean>
-	<mvc:view-controller path="" view-name="" />
 </beans>

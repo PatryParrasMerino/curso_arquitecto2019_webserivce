@@ -3,7 +3,7 @@
   <groupId>10_cliente_contactos_rest</groupId>
   <artifactId>10_cliente_contactos_rest</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
+
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>

@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>10_cliente_contactos_rest</groupId>
-  <artifactId>10_cliente_contactos_rest</artifactId>
+  <groupId>06_ejemplo_rest_spring</groupId>
+  <artifactId>06_ejemplo_rest_spring</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
+
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
@@ -24,10 +24,9 @@
       </plugin>
     </plugins>
   </build>
-    <parent>
+  <parent>
   	<groupId>spring.parent.rest.group</groupId>
   	<artifactId>spring.parent.rest</artifactId>
   	<version>0.0.1-SNAPSHOT</version>
   </parent>
-	
 </project>
