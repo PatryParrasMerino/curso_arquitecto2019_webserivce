@@ -8,8 +8,13 @@
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
 	<mvc:annotation-driven/>
 	<context:component-scan base-package="controller"/>
-	
+	<bean id="resolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
 	<bean id="template"
 		class="org.springframework.web.client.RestTemplate">
 	</bean>
+	<mvc:view-controller path="toMenu" view-name="menu"/>
 </beans>

@@ -24,10 +24,16 @@
       </plugin>
     </plugins>
   </build>
-    <parent>
+  <parent>
   	<groupId>spring.parent.rest.group</groupId>
   	<artifactId>spring.parent.rest</artifactId>
   	<version>0.0.1-SNAPSHOT</version>
   </parent>
-	
+	<dependencies>
+		<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>jstl</artifactId>
+	    <version>1.2</version>
+	</dependency>
+	</dependencies>
 </project>
