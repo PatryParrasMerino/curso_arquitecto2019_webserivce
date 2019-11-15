@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,28 +11,44 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+<script type="text/javascript">
+	function alta(){
+		var url="http://localhost:8080/07_crud_contactos_rest/contactos";
+		var obj=new Object();
+		obj.nombre=$("#nombre").val();
+		obj.edad=parseInt($("#edad").val());
+		obj.email=$("#email").val();
+		console.log(obj);
+		$.ajax({"url":url,
+				"data":JSON.stringify(obj),
+				"type":"POST",
+				"contentType":"application/json"})
+				.done(function() {
+					window.location.href="menu.html";
+				});		
+	}
+
+</script>
 </head>
 <body>
 <div class="container">
 	<h1>Formulario de autenticación</h1>
-	<f:form action="doAlta" method="post" modelAttribute="contacto">
+	<form >
 
 		<div class="form-group">
-			<label>Nombre:</label><f:input path="nombre"  class="form-control" style="width:30%" placeholder="Usuario" autocomplete="name"/>
+			<label class="control-label col-sm-2">Nombre:</label><input type="text" id="nombre"  class="form-control" style="width:30%" placeholder="Usuario" autocomplete="name"/>
 		</div>
 		<div class="form-group">
-			<label>Correo electrónico:</label><f:input path="email"  class="form-control" style="width:30%" placeholder="identificador@dominio.es"/>
+			<label class="control-label col-sm-2">Correo electrónico:</label><input type="text" id="email"  class="form-control" style="width:30%" placeholder="identificador@dominio.es"/>
 		</div>
 		  <div class="form-group">
-		    <label class="control-label col-sm-2" for="age">Edad:</label>
-		    <div class="col-sm-10">
-		      <f:input path="edad" class="form-control" id="age"  />
-		    </div>
+		    <label class="control-label col-sm-2" >Edad:</label>		    
+		      <input type="text" id="edad" class="form-control" style="width:30%"/>
 		  </div>
 		
-		<button type="submit" class="btn btn-default">Guardar</button>
+		<button type="button" class="btn btn-default" onclick="alta();">Guardar</button>
 		
-	</f:form>
+	</form>
 </div>
 </body>
 </html>
