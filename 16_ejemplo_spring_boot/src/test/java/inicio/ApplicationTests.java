@@ -1,13 +1,24 @@
 package inicio;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import static org.junit.Assert.assertEquals;
 
-@SpringBootTest
+import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import controller.SaludoController;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = {SaludoController.class})
 class ApplicationTests {
 
+	@Autowired
+	SaludoController saludo;
 	@Test
 	void contextLoads() {
+		assertEquals(saludo.contar("hola"),"4"); //assertequals es para hacer suposiciones
 	}
 
 }
