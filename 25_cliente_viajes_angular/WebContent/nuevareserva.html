@@ -72,30 +72,31 @@
 		var app=angular.module("comunicacionApp",[]);
 		app.controller("comunicacionController",function($scope,$http){
 			$scope.vuelos=[];
-			$scope.hoteles=[];			
+			$scope.hoteles=[];		
 			$scope.hotel;
 			$scope.vuelo;
 			$scope.nombre;
-			$scope.dni;			
-			$scope.mostrarTabla=true;
-			
-			$scope.cargarHoteles=function(){				
-				let url = "http://10.2.4.23:8002/viajes/hoteles";
+			$scope.dni;		
+			$scope.mostrarTabla=true;			
+			$scope.cargarHoteles=function(){
+				
+				//let url = "http://10.2.4.23:8002/viajes/hoteles";
+				let url = "http://localhost:7000/viajes/viajes/hoteles";
 				$http.get(url).then(function(res){
 					$scope.hoteles=res.data;
 								
 				});
 			}
 			$scope.cargarVuelos=function(){				
-				let url = "http://10.2.4.24:9000/vuelos/disponibilidadVuelos/1";
-				
+				//let url = "http://10.2.4.24:9000/vuelos/disponibilidadVuelos/1";	
+				let url = "http://localhost:7000/vuelos/vuelos/disponibilidadVuelos/1";	
 				$http.get(url).then(function(res){
-					$scope.vuelos=res.data;
-								
+					$scope.vuelos=res.data;								
 				});
 			}
 			$scope.reservar=function(){
-				let url="http://10.2.4.25:8001/reservas/alta";
+				//let url="http://10.2.4.25:8001/reservas/alta";
+				let url="http://localhost:7000/reservas/reservas/alta";
 				let ob=new Object();
 				ob.nombre=$scope.nombre;
 				ob.dni=$scope.dni;

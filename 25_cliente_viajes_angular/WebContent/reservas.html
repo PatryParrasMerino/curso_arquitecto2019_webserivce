@@ -38,13 +38,14 @@
 	<script>
 		var app=angular.module("comunicacionApp",[]);
 		app.controller("comunicacionController",function($scope,$http){
-			$scope.reservas=[];			
-			$scope.cargar=function(){				
-				let url="http://10.2.4.25:8001/reservas/lista";
+			$scope.reservas=[];	
+			$scope.cargar=function(){
+				//let url="http://10.2.4.25:8001/reservas/lista";
+				let url="http://localhost:7000/reservas/reservas/lista";
 				$http.get(url).then(function(res){
 					$scope.reservas=res.data;			
 				});
-				}			
+			}		
 		});
 	
 	</script>

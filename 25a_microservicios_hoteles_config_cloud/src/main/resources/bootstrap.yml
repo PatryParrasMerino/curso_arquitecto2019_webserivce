@@ -1,0 +1,4 @@
+spring:
+  application:
+    name: servicio-hoteles
+  cloud:    config:      uri: http://10.2.4.43:8888

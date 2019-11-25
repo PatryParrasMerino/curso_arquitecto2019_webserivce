@@ -2,7 +2,7 @@ spring:
   application:
     name: servicio-reservas
 server:
-  port: 7200
-  servlet:    context-path: /reservas
-eureka:  client:
+  port: 7200  servlet:    context-path: /reservas  
+eureka:
+  client:
     service-url:      defaultZone: http://localhost:8761/eureka
