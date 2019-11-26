@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	var source;
+	
+	function suscribir() {
+		let url="http://localhost:7000/dias"
+		source=new EventSource(url); //objeto para consumir flujos de datos
+		//comenzamos suscripción
+		source.addEventListener("message",function(e){
+			document.getElementById("datos").innerHTML+=e.data+"<br/>";
+		});
+	}
+	
+	function cancelar() {
+		source.close();
+	}
+	
+</script>
+</head>
+<body>
+	<input type="button" value="suscribir" onclick="suscribir();">
+	<br/><br/>
+	<input type="button" value="cancelar" onclick="cancelar();">
+	<br/><br/><br/>
+	<div id="datos">
+	
+	</div>
+</body>
+</html>

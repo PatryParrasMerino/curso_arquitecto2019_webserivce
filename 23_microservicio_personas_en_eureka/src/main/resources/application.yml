@@ -2,7 +2,10 @@ spring:
   application:
     name: servicio-personas
 server:
-  port: 8000
+  port: 0
   servlet:    context-path: /personas
 eureka:  client:
     service-url:      defaultZone: http://localhost:8761/eureka
+  instance:    ip-address: 10.2.4.43
+    prefer-ip-address: true
+    instance-id: 102.4.43:${server.port}-${random.value}
