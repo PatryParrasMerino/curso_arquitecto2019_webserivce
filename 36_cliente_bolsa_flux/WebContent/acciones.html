@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var evt;
+	var url="http://localhost:7000/bolsa";
+	function suscripcion(){
+		evt=new EventSource(url);
+		var a=0;
+		var tabla="<table border='1'><tr><th>Company</th><th>Precio</th></tr>";
+		evt.addEventListener("message",function(e){
+			var obj=JSON.parse(e.data);
+			if(obj.company!="EOF"){
+				tabla+="<tr><td>"+obj.company+"</td><td>"+obj.valor+"</td></tr>";
+			}else{
+				tabla+="</table>";
+				document.getElementById("tabla").innerHTML=tabla;
+				tabla="<table border='1'><tr><th>Company</th><th>Precio</th></tr>";
+			}			
+		});
+		
+		//document.getElementById("tabla").innerHTML=tabla;
+	}
+
+</script>
+
+</head>
+<body onload="suscripcion();">
+
+<div id="tabla">
+
+</div>
+</body>
+</html>

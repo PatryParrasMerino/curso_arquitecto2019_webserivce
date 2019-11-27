@@ -23,6 +23,13 @@ public class Accione implements Serializable {
 	private double valor;
 
 	public Accione() {
+	}	
+
+	public Accione(int id, String company, double valor) {
+		super();
+		this.id = id;
+		this.company = company;
+		this.valor = valor;
 	}
 
 	public int getId() {
