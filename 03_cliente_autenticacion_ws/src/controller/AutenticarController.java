@@ -10,4 +10,5 @@ package controller;
 public interface AutenticarController extends java.rmi.Remote {
     public javabeans.Cliente obtenerCliente(java.lang.String user, java.lang.String pass) throws java.rmi.RemoteException;
     public boolean autenticarCliente(java.lang.String user, java.lang.String pass) throws java.rmi.RemoteException;
+    
 }
