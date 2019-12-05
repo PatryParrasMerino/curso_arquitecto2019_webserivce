@@ -7,12 +7,14 @@ import javax.ejb.Stateless;
 import javax.ejb.Timeout;
 import javax.ejb.Timer;
 
+import org.springframework.web.context.support.SpringBeanAutowiringSupport;
+
 /**
  * Session Bean implementation class TemporizadorEjb
  */
 @Stateless
 @LocalBean
-public class TemporizadorEjb implements TemporizadorEjbLocal {
+public class TemporizadorEjb /*extends SpringBeanAutowiringSupport // para que un ejb funcione con spring */ implements TemporizadorEjbLocal{
 	@Resource
 	SessionContext sc;	
 	Timer tm;
